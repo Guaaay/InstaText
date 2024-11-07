@@ -106,6 +106,7 @@ function runOCR(screenshotPath) {
         copyToClipboard(stdout.toString());
         Main.notify('OCR result copied to clipboard. Text: ' + stdout.toString());
         log("OCR result copied to clipboard.");
+        
     } else {
         log("OCR failed."); 
     }
@@ -118,18 +119,15 @@ class Indicator extends PanelMenu.Button {
         super._init(0.0, _('My Shiny Indicator'));
 
         this.add_child(new St.Icon({
-            icon_name: 'applets-screenshooter-symbolic.png',
+            icon_name: 'applets-screenshooter-symbolic',
             style_class: 'system-status-icon',
         }));
 
-        let item = new PopupMenu.PopupMenuItem(_('Take OCR screenshot'));
-        item.connect('activate', () => {
-            if(checkTesseract()){
-                path = takeScreenshotAsync();
+        this.connect('button-press-event', () => {
+            if (checkTesseract()) {
+                takeScreenshotAsync();
             }
-            
         });
-        this.menu.addMenuItem(item);
     }
 });
 

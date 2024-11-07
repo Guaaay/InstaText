@@ -1,7 +1,7 @@
 {
-  "name": "OCR Screenshot",
+  "name": "InstaText",
   "description": "Runs a screenshot snippet through an OCR engine and copies the result to the clipboard",
-  "uuid": "ocrscreenshot@astudillo.com",
+  "uuid": "instatext@astudillo.com",
   "shell-version": [
     "42"
   ]
