@@ -1,0 +1,8 @@
+{
+  "name": "OCR Screenshot",
+  "description": "Runs a screenshot snippet through an OCR engine and copies the result to the clipboard",
+  "uuid": "ocrscreenshot@astudillo.com",
+  "shell-version": [
+    "42"
+  ]
+}
